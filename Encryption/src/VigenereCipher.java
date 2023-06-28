@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class VigenereCipher {
+class VigenereCipher {
     public static String encrypt(String plainText, String key) {
         StringBuilder encryptedText = new StringBuilder();
         int keyIndex = 0;
@@ -38,5 +36,4 @@ public class VigenereCipher {
 
         return decryptedText.toString();
     }
-
 }

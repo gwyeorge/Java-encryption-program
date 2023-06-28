@@ -1,4 +1,4 @@
-public class CaesarCipher {
+class CaesarCipher {
     public static String encrypt(String plainText, int shift) {
         StringBuilder encryptedText = new StringBuilder();
 
