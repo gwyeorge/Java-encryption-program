@@ -17,6 +17,10 @@ public class GUI {
         JFrame frame = new JFrame("George Encryptor");
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+
+        ImageIcon icon = new ImageIcon("/home/george/IdeaProjects/Encryption/src/resources/icon.png");
+        frame.setIconImage(icon.getImage());
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);
