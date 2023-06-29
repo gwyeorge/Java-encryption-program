@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class GUI {
     private JComboBox<String> comboBox1;
@@ -19,7 +20,7 @@ public class GUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
-        ImageIcon icon = new ImageIcon("/home/george/IdeaProjects/Encryption/src/resources/icon.png");
+        ImageIcon icon = new ImageIcon("src/resources/icon.png");
         frame.setIconImage(icon.getImage());
 
         JPanel mainPanel = new JPanel();
@@ -88,24 +89,35 @@ public class GUI {
         String plainText = textField1.getText();
         String key = textField2.getText();
 
-        String result;
-        if (cipherChoice.equals("Vigenere")) {
-            if (operationChoice.equals("Encrypt")) {
-                result = VigenereCipher.encrypt(plainText, key);
-            } else {
-                result = VigenereCipher.decrypt(plainText, key);
-            }
-        } else if (cipherChoice.equals("Caesar")) {
-            int shift = Integer.parseInt(key);
-            if (operationChoice.equals("Encrypt")) {
-                result = CaesarCipher.encrypt(plainText, shift);
-            } else {
-                result = CaesarCipher.decrypt(plainText, shift);
-            }
-        } else {
-            result = "Invalid cipher choice.";
+        if (operationChoice.equals("Encpt/Dcpt")) {
+            JOptionPane.showMessageDialog(null, "Please select the method!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-        resultsTextField.setText(result);
+        try {
+            String result;
+            if (cipherChoice.equals("Vigenere")) {
+                if (operationChoice.equals("Encrypt")) {
+                    result = VigenereCipher.encrypt(plainText, key);
+                } else {
+                    result = VigenereCipher.decrypt(plainText, key);
+                }
+            } else if (cipherChoice.equals("Caesar")) {
+                int shift = Integer.parseInt(key);
+                if (operationChoice.equals("Encrypt")) {
+                    result = CaesarCipher.encrypt(plainText, shift);
+                } else {
+                    result = CaesarCipher.decrypt(plainText, shift);
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid cipher choice.");
+            }
+
+            resultsTextField.setText(result);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Invalid key value!", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
