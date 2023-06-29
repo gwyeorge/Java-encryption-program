@@ -15,19 +15,19 @@ public class GUI {
     }
 
     private void createAndShowGUI() {
-        JFrame frame = new JFrame("George Encryptor");
+        JFrame frame = new JFrame("Encryptor");
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
-        ImageIcon icon = new ImageIcon("src/resources/icon.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\tech\\Ideaprojects\\Java-encryption-program\\images\\encryption.png");
         frame.setIconImage(icon.getImage());
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);
         mainPanel.setSize(400, 400);
 
-        JLabel byLabel = new JLabel("By gwyneorge, georgethomidis@gmail.com");
+        JLabel byLabel = new JLabel("By github: gwyneorge, georgethomidis@gmail.com");
         byLabel.setBounds(10, 10, 400, 20);
         mainPanel.add(byLabel);
 
@@ -65,7 +65,7 @@ public class GUI {
         mainPanel.add(resultsPanel);
 
         JLabel resultsLabel = new JLabel("Results:");
-        resultsLabel.setBounds(10, 10, 60, 20);
+        resultsLabel.setBounds(10, 20, 60, 20);
         resultsPanel.add(resultsLabel);
 
         resultsTextField = new JTextField();
