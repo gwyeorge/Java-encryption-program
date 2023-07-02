@@ -20,7 +20,8 @@ public class GUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
-        ImageIcon icon = new ImageIcon("C:\\Users\\tech\\Ideaprojects\\Java-encryption-program\\images\\encryption.png");
+
+        ImageIcon icon = new ImageIcon("C:link)");
         frame.setIconImage(icon.getImage());
 
         JPanel mainPanel = new JPanel();
@@ -47,16 +48,16 @@ public class GUI {
         textField1.setBounds(100, 130, 200, 30);
         mainPanel.add(textField1);
 
-        JLabel label2 = new JLabel("Key");
+        JLabel label2 = new JLabel("Key:");
         label2.setBounds(180, 170, 40, 20);
         mainPanel.add(label2);
 
         textField2 = new JTextField();
-        textField2.setBounds(150, 200, 100, 30);
+        textField2.setBounds(140, 200, 100, 30);
         mainPanel.add(textField2);
 
         JButton startButton = new JButton("Start");
-        startButton.setBounds(150, 240, 100, 30);
+        startButton.setBounds(140, 240, 100, 30);
         mainPanel.add(startButton);
 
         JPanel resultsPanel = new JPanel();
@@ -65,7 +66,7 @@ public class GUI {
         mainPanel.add(resultsPanel);
 
         JLabel resultsLabel = new JLabel("Results:");
-        resultsLabel.setBounds(10, 20, 60, 20);
+        resultsLabel.setBounds(120, 10, 60, 20);
         resultsPanel.add(resultsLabel);
 
         resultsTextField = new JTextField();
@@ -90,7 +91,7 @@ public class GUI {
         String key = textField2.getText();
 
         if (operationChoice.equals("Encpt/Dcpt")) {
-            JOptionPane.showMessageDialog(null, "Please select the method!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select Encryption or Decryption!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
